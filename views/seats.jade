@@ -1,0 +1,93 @@
+extends layout
+
+block content
+    section.page-main.padding-top.padding-bottom
+        .container
+            .row
+                .col-md-8.main-left
+                    .seats-wrapper
+                        .col-md-6
+                        .col-md-6
+                    a.btn.btn-continue Tiếp tục
+                .col-md-4.sidebar-widget
+                    .col-2
+                        .search-widget.widget
+                            form
+                                .input-group.search-wrapper
+                                    input.search-input.form-control(type="text" placeholder="Search...")
+                                    span.input-group-btn
+                                        button.btn.submit-btn(type="submit")
+                                            span.fa.fa-search
+                    .col-2
+                        .col-1
+                            .summary-trip-widget.widget
+                                .title-widget
+                                    .title Summary Trip
+                                .content-widget
+                                    .box-summary-detail
+                                        .single-widget-item
+                                            p.style-title-1 Total:
+                                            h2.total-price 2.200.000 VND
+                                        .single-widget-item
+                                            .title-item
+                                                i.fa.fa-plane.icons-2
+                                                h4.style-title-2 Departing
+                                            ul.info-departing
+                                                li
+                                                    p Business Flex
+                                                li
+                                                    p Flight - VN Airs
+                                                li
+                                                    p Depart - Ho Chi Minh City
+                                                li
+                                                    p.inline-block Departure
+                                                    p.inline-block.text-align-right 18:35 Thu, 20 Oct
+                                                li
+                                                    p Price - 3.000.000
+                                                li
+                                                    p Arrive - California, New York
+                                                li
+                                                    p.inline-block Arrival
+                                                    p.inline-block.text-align-right 19:25 Thu, 20 Oct
+                                        .single-widget-item
+                                            .title-item
+                                                i.fa.fa-plane.icons-2
+                                                h4.style-title-2 Arriving
+                                            ul.info-arriving
+                                                li
+                                                    p Business Flex
+                                                li
+                                                    p Flight - VN Airs
+                                                li
+                                                    p Depart - California, New York
+                                                li
+                                                    p.inline-block Departure
+                                                    p.inline-block.text-align-right 18:35 Thu, 20 Oct
+                                                li
+                                                    p Price - 3.000.000
+                                                li
+                                                    p Arrive - Ho Chi Minh City
+                                                li
+                                                    p.inline-block Arrival
+                                                    p.inline-block.text-align-right 19:25 Thu, 20 Oct
+                                        .single-widget-item
+                                            .title-item
+                                                i.fa.fa-user.icons-2
+                                                h4.style-title-2 Passenger: 1
+                                            ul.info-passenger
+                                                li
+                                                    p Price Summary:
+                                                li
+                                                    p.inline-block Fare
+                                                    p.inline-block.text-align-right 1.900.000 VND
+                                                li
+                                                    p.inline-block Taxes
+                                                    p.inline-block.text-align-right 320.000 VND
+                                                li
+                                                    p Discount
+                                                li
+                                                    p Fees
+                                                li
+                                                    p Ancillaries
+                                        .single-widget-item
+                                            h2.total-price.style-1 2.200.000 VND

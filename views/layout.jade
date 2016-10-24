@@ -1,0 +1,221 @@
+doctype html
+html(lang="en")
+  head
+    title= title
+    meta(charset="utf-8")
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+
+    // FONT CSS
+    link(type="text/css", rel='stylesheet', href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900")
+    link(type="text/css", rel='stylesheet', href="https://fonts.googleapis.com/css?family=Montserrat:400,700")
+    link(type="text/css", rel='stylesheet', href="/font/font-icon/font-awesome/css/font-awesome.min.css")
+    link(type="text/css", rel='stylesheet', href="/font/font-flaticon/flaticon.css")
+
+    // LIBRARY CSS
+    link(type="text/css", rel="stylesheet", href="/libraries/animate.css/animate.css")
+    link(type="text/css", rel="stylesheet", href="/libraries/bootstrap-3.3.4-dist/css/bootstrap.min.css")
+    link(type="text/css", rel="stylesheet", href="/libraries/bootstrap-datepicker/css/bootstrap-datepicker.min.css")
+    link(type="text/css", rel="stylesheet", href="/libraries/selectbox/css/jquery.selectBox.css")
+    link(type="text/css", rel="stylesheet", href="/libraries/slick-slider/slick.css")
+
+    // STYLE CSS
+    link(type="text/css", rel="stylesheet", href="/stylesheets/layout.css")
+    link(type="text/css", rel="stylesheet", href="/stylesheets/components.css")
+    link(type="text/css", rel="stylesheet", href="/stylesheets/styles.css")
+    link(type="text/css", rel="stylesheet", href="/stylesheets/responsive.css")
+
+  body
+    // WRAPPER
+    #wrapper-content
+      // MAIN CONTENT
+      .main-content
+        section.page-banner.homepage-default
+          .container
+            .homepage-banner-warpper
+              .homepage-banner-content
+                .group-title
+                  h1.title tvt airlines
+                  p.text
+                    | The world you have never seen
+                    span.boder
+                .group-btn
+                  a.btn-click(href='#', data-hover='CLICK ME')
+                    span.text go explore now
+                    span.icons.fa.fa-long-arrow-right
+        block content
+    // FOOTER
+    footer
+      .footer-main.padding-top.padding-bottom
+        .container
+          .footer-main-wrapper
+            a.logo-footer(href='index.html')
+              img.img-responsive(src='/images/logo/logo.png', alt='')
+            .row
+              .col-2
+                .col-md-3.col-xs-5
+                  .contact-us-widget.widget
+                    .title-widget contact us
+                    .content-widget
+                      .info-list
+                        ul.list-unstyled
+                          li
+                            i.icons.fa.fa-map-marker
+                            a.link(href='#') 132, My Street, Kingston, New York 12401
+                          li
+                            i.icons.fa.fa-phone
+                            a.link(href='#') 270 - 188 - 6026
+                          li
+                            i.icons.fa.fa-envelope-o
+                            a.link(href='#') domain@expooler.com
+                      .form-email
+                        p.text Sign up for our mailing list to get latest updates and offers.
+                        form(action='index.html')
+                          .input-group
+                            input.form-control.form-email-widget(type='text', placeholder='Email address')
+                            span.input-group-btn
+                              button.btn-email(type='submit') ✔
+                .col-md-2.col-xs-3
+                  .booking-widget.widget.text-center
+                    .title-widget book now
+                    .content-widget
+                      ul.list-unstyled
+                        li
+                          a.link(href='#') Flights
+                        li
+                          a.link(href='#') Tours
+                        li
+                          a.link(href='#') Packages
+                        li
+                          a.link(href='#') Transfer
+                        li
+                          a.link(href='#') Car Rent
+                        li
+                          a.link(href='#') Cruises
+                .col-md-2.col-xs-4
+                  .explore-widget.widget
+                    .title-widget explore
+                    .content-widget
+                      ul.list-unstyled
+                        li
+                          a.link(href='#') Tour Singapore City
+                        li
+                          a.link(href='#') Tour Manila City
+                        li
+                          a.link(href='#') Tour New York City
+                        li
+                          a.link(href='#') Tour Sanghai City
+                        li
+                          a.link(href='#') Tour Hongkong City
+                        li
+                          a.link(href='#') Tour Tokyo City
+              .col-2
+                .col-md-2.col-xs-6
+                  .top-deals-widget.widget
+                    .title-widget top deals
+                    .content-widget
+                      ul.list-unstyled
+                        li
+                          a.link(href='#') Tour Packages Singapore
+                        li
+                          a.link(href='#') Tour Packages Manila
+                        li
+                          a.link(href='#') Tour Packages New York
+                        li
+                          a.link(href='#') Tour Packages Sanghai
+                        li
+                          a.link(href='#') Tour Packages Hongkong
+                        li
+                          a.link(href='#') Tour Packages Tokyo
+                .col-md-3.col-xs-6
+                  .destination-widget.widget
+                    .title-widget Destination
+                    .content-widget
+                      ul.list-unstyled.list-inline
+                        li
+                          a.thumb(href='#')
+                            img.img-responsive(src='/images/footer/gallery-01.jpg', alt='')
+                        li
+                          a.thumb(href='#')
+                            img.img-responsive(src='/images/footer/gallery-02.jpg', alt='')
+                        li
+                          a.thumb(href='#')
+                            img.img-responsive(src='/images/footer/gallery-03.jpg', alt='')
+                        li
+                          a.thumb(href='#')
+                            img.img-responsive(src='/images/footer/gallery-04.jpg', alt='')
+                        li
+                          a.thumb(href='#')
+                            img.img-responsive(src='/images/footer/gallery-05.jpg', alt='')
+                        li
+                          a.thumb(href='#')
+                            img.img-responsive(src='/images/footer/gallery-06.jpg', alt='')
+      .hyperlink
+        .container
+          .slide-logo-wrapper
+            .logo-item
+              a.link(href='#')
+                img.img-responsive(src='/images/footer/logo-01.png', alt='')
+            .logo-item
+              a.link(href='#')
+                img.img-responsive(src='/images/footer/logo-02.png', alt='')
+            .logo-item
+              a.link(href='#')
+                img.img-responsive(src='/images/footer/logo-03.png', alt='')
+            .logo-item
+              a.link(href='#')
+                img.img-responsive(src='/images/footer/logo-04.png', alt='')
+            .logo-item
+              a.link(href='#')
+                img.img-responsive(src='/images/footer/logo-05.png', alt='')
+            .logo-item
+              a.link(href='#')
+                img.img-responsive(src='/images/footer/logo-06.png', alt='')
+            .logo-item
+              a.link(href='#')
+                img.img-responsive(src='/images/footer/logo-01.png', alt='')
+            .logo-item
+              a.link(href='#')
+                img.img-responsive(src='/images/footer/logo-02.png', alt='')
+            .logo-item
+              a.link(href='#')
+                img.img-responsive(src='/images/footer/logo-03.png', alt='')
+            .logo-item
+              a.link(href='#')
+                img.img-responsive(src='/images/footer/logo-04.png', alt='')
+            .logo-item
+              a.link(href='#')
+                img.img-responsive(src='/images/footer/logo-05.png', alt='')
+            .logo-item
+              a.link(href='#')
+                img.img-responsive(src='/images/footer/logo-06.png', alt='')
+          .social-footer
+            ul.list-inline.list-unstyled
+              li
+                a.link.facebook(href='#')
+                  i.fa.fa-facebook
+              li
+                a.link.twitter(href='#')
+                  i.fa.fa-twitter
+              li
+                a.link.pinterest(href='#')
+                  i.fa.fa-pinterest-p
+              li
+                a.link.google(href='#')
+                  i.fa.fa-google
+          .name-company © Designed by SWLABS.
+
+
+    // LIBRARY JS
+    script(src="/libraries/browser.min.js", type="text/javascript")
+    script(src="/libraries/react-15.3.2/react.min.js", type="text/javascript")
+    script(src="/libraries/react-15.3.2/react-dom.min.js", type="text/javascript")
+
+    script(src="/libraries/jquery-2.1.4.min.js", type="text/javascript")
+    script(src="/libraries/bootstrap-3.3.4-dist/js/bootstrap.min.js", type="text/javascript")
+
+    script(src="/libraries/bootstrap-datepicker/js/bootstrap-datepicker.min.js", type="text/javascript")
+    script(src="/libraries/selectbox/js/jquery.selectbox-0.2.min.js", type="text/javascript")
+    script(src="/libraries/slick-slider/slick.min.js", type="text/javascript")
+
+    // MAIN JS
+    script(src="/javascripts/main.js", type="text/babel")

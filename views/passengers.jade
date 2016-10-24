@@ -1,0 +1,255 @@
+extends layout
+
+block content
+    section.page-main.padding-top.padding-bottom
+        .container
+            .row
+                .col-md-8.main-left
+                    .find-widget.widget.style-1
+                        .block-name
+                            .text-input
+                                .text-box-wrapper.width-20
+                                    label.tb-label Title<p style="color: red; display: inline-block;">*</p>
+                                    .select-wrapper
+                                        select.form-control.custom-select.selectbox
+                                            option Mr.
+                                            option Mrs.
+                                            option Ms.
+                                .text-box-wrapper.width-40
+                                    label.tb-label Middle name & First/Given name<p style="color: red; display: inline-block;">*</p>
+                                    .input-group
+                                        input.tb-input(type='text', placeholder='Write your name...')
+                                .text-box-wrapper.width-40
+                                    label.tb-label Last/Family name
+                                    .input-group
+                                        input.tb-input(type='text', placeholder='Write your name...')
+                        .block-travel-info
+                            .text-input
+                                h4.title Traveler Info
+                                .box-travel-info
+                                    .text-box-wrapper
+                                        label.tb-label Date of Birth:
+                                        .input-group
+                                            input.tb-input.datetimepickerWidget(type='text', placeholder='dd/mm/YYYY')
+                                    .text-box-wrapper
+                                        label.tb-label Gender:
+                                        .ffw-radio-selection
+                                            span.ffw-radio-btn-wrapper.margin-right-40
+                                                input#gender-type-1.ffw-radio-btn(type='radio', name='gender type', value='male')
+                                                label.ffw-radio-label(for='gender-type-1') Male
+                                            span.ffw-radio-btn-wrapper
+                                                input#gender-type-2.ffw-radio-btn(type='radio', name='gender type', value='female')
+                                                label.ffw-radio-label(for='gender-type-2') Female
+                        .block-number
+                            .text-input
+                                .text-box-wrapper
+                                    label.tb-label Frequently Flyer Number:
+                                    .select-wrapper
+                                        select.form-control.custom-select.selectbox
+                                            option Vietnam Airlines
+                                            option AEROFLOT
+                                            option Air France
+                                            option Korean Air
+                                    .input-group
+                                        input.tb-input(type='text', placeholder='')
+                        .block-document-info
+                            h4.title Traveler Document Information:
+                            .box-document-info
+                                .row
+                                    .col-md-6
+                                        .text-box-wrapper
+                                            label.tb-label Document Type:
+                                            .select-wrapper
+                                                select.form-control.custom-select.selectbox
+                                                    option Passport
+                                                    option Identity Card
+                                        .text-box-wrapper
+                                            label.tb-label Number:
+                                            .input-group
+                                                input.tb-input(type="text", placeholder='')
+                                        .text-box-wrapper
+                                            label.tb-label Issuing Country:
+                                            .select-wrapper
+                                                select.form-control.custom-select.selectbox
+                                                    option United States
+                                                    option United Kingdom
+                                                    option China
+                                                    option Vietnam
+                                    .col-md-6
+                                        .text-box-wrapper
+                                            label.tb-label Exp. Date:
+                                            .input-group
+                                                input.tb-input.datetimepickerWidget(type='text', placeholder='dd/mm/YYYY')
+                                        .text-box-wrapper
+                                            label.tb-label Nationality:
+                                            .select-wrapper
+                                                select.form-control.custom-select.selectbox
+                                                    option United States
+                                                    option United Kingdom
+                                                    option China
+                                                    option Vietnam
+                        .block-contact-info
+                            .row
+                                .col-md-12
+                                    h4 Phone
+                                    .text-box-wrapper
+                                        .select-wrapper.width-15
+                                            select.form-control.custom-select.selectbox
+                                                option Mobile
+                                                option Home
+                                                option Business
+                                                option Other
+                                        .select-wrapper.width-25
+                                            select.form-control.custom-select.selectbox
+                                                option Vietnam (84)
+                                                option United States (1)
+                                                option United Kingdom (44)
+                                        .input-group.width-10
+                                            input.tb-input(type="text" placeholder="")
+                                        .input-group.width-40
+                                            input.tb-input(type="text" placeholder="")
+                                    .text-box-wrapper
+                                        .select-wrapper.width-15
+                                            select.form-control.custom-select.selectbox
+                                                option Home
+                                                option Business
+                                                option Other
+                                        .select-wrapper.width-25
+                                            select.form-control.custom-select.selectbox
+                                                option Vietnam (84)
+                                                option United States (1)
+                                                option United Kingdom (44)
+                                        .input-group.width-10
+                                            input.tb-input(type="text" placeholder="")
+                                        .input-group.width-40
+                                            input.tb-input(type="text" placeholder="")
+                                    .text-box-wrapper
+                                        .select-wrapper.width-15
+                                            select.form-control.custom-select.selectbox
+                                                option Business
+                                                option Other
+                                        .select-wrapper.width-25
+                                            select.form-control.custom-select.selectbox
+                                                option Vietnam (84)
+                                                option United States (1)
+                                                option United Kingdom (44)
+                                        .input-group.width-10
+                                            input.tb-input(type="text" placeholder="")
+                                        .input-group.width-40
+                                            input.tb-input(type="text" placeholder="")
+                                    .text-box-wrapper
+                                        .select-wrapper.width-15
+                                            select.form-control.custom-select.selectbox
+                                                option Other
+                                        .select-wrapper.width-25
+                                            select.form-control.custom-select.selectbox
+                                                option Vietnam (84)
+                                                option United States (1)
+                                                option United Kingdom (44)
+                                        .input-group.width-10
+                                            input.tb-input(type="text" placeholder="")
+                                        .input-group.width-40
+                                            input.tb-input(type="text" placeholder="")
+                        .block-contact-info
+                            .row
+                                .col-md-12
+                                    h4 Email
+                                    .text-box-wrapper
+                                        label.tb-label.width-20 Email Address:
+                                        .input-group.width-80
+                                            input.tb-input(type="email")
+                                    .text-box-wrapper
+                                        label.tb-label.width-20 Retype:
+                                        .input-group.width-80
+                                            input.tb-input(type="email")
+                                    .text-box-wrapper
+                                        label.tb-label.width-20 Email Address 2:
+                                        .input-group.width-80
+                                            input.tb-input(type="email")
+                                    .text-box-wrapper
+                                        label.tb-label.width-20 Retype:
+                                        .input-group.width-80
+                                            input.tb-input(type="email")
+                    a.btn.btn-continue.style-1 Tiếp tục
+                .col-md-4.sidebar-widget
+                    .col-2
+                        .search-widget.widget
+                            form
+                                .input-group.search-wrapper
+                                    input.search-input.form-control(type="text" placeholder="Search...")
+                                    span.input-group-btn
+                                        button.btn.submit-btn(type="submit")
+                                            span.fa.fa-search
+                    .col-2
+                        .col-1
+                            .summary-trip-widget.widget
+                                .title-widget
+                                    .title Summary Trip
+                                .content-widget
+                                    .box-summary-detail
+                                        .single-widget-item
+                                            p.style-title-1 Total:
+                                            h2.total-price 2.200.000 VND
+                                        .single-widget-item
+                                            .title-item
+                                                i.fa.fa-plane.icons-2
+                                                h4.style-title-2 Departing
+                                            ul.info-departing
+                                                li
+                                                    p Business Flex
+                                                li
+                                                    p Flight - VN Airs
+                                                li
+                                                    p Depart - Ho Chi Minh City
+                                                li
+                                                    p.inline-block Departure
+                                                    p.inline-block.text-align-right 18:35 Thu, 20 Oct
+                                                li
+                                                    p Price - 3.000.000
+                                                li
+                                                    p Arrive - California, New York
+                                                li
+                                                    p.inline-block Arrival
+                                                    p.inline-block.text-align-right 19:25 Thu, 20 Oct
+                                        .single-widget-item
+                                            .title-item
+                                                i.fa.fa-plane.icons-2
+                                                h4.style-title-2 Arriving
+                                            ul.info-arriving
+                                                li
+                                                    p Business Flex
+                                                li
+                                                    p Flight - VN Airs
+                                                li
+                                                    p Depart - California, New York
+                                                li
+                                                    p.inline-block Departure
+                                                    p.inline-block.text-align-right 18:35 Thu, 20 Oct
+                                                li
+                                                    p Price - 3.000.000
+                                                li
+                                                    p Arrive - Ho Chi Minh City
+                                                li
+                                                    p.inline-block Arrival
+                                                    p.inline-block.text-align-right 19:25 Thu, 20 Oct
+                                        .single-widget-item
+                                            .title-item
+                                                i.fa.fa-user.icons-2
+                                                h4.style-title-2 Passenger: 1
+                                            ul.info-passenger
+                                                li
+                                                    p Price Summary:
+                                                li
+                                                    p.inline-block Fare
+                                                    p.inline-block.text-align-right 1.900.000 VND
+                                                li
+                                                    p.inline-block Taxes
+                                                    p.inline-block.text-align-right 320.000 VND
+                                                li
+                                                    p Discount
+                                                li
+                                                    p Fees
+                                                li
+                                                    p Ancillaries
+                                        .single-widget-item
+                                            h2.total-price.style-1 2.200.000 VND

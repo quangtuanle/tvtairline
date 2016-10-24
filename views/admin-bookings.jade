@@ -1,0 +1,55 @@
+extends layout
+
+block content
+    section.page-main.padding-top.padding-bottom
+        .container
+            .row
+                h4.title Quản lý đặt chỗ
+                table.table-manage-bookings
+                    tbody
+                        tr.style-1
+                            td(width="10%") Mã
+                            td(width="20%") Thời gian đặt chỗ
+                            td(width="15%") Tổng tiền
+                            td(width="15%") Trạng thái
+                            td(width="20%") Sửa
+                            td(width="20%") Xóa
+                        tr
+                            td(width="10%") ABCXYZ
+                            td(width="20%") 2016-05-01 10:00:00
+                            td(width="15%") 400000
+                            td(width="15%") 1
+                            td(width="20%")
+                                .btn.btn-update Sửa
+                            td(width="20%")
+                                .btn.btn-delete Xóa
+                        tr
+                            td(width="10%") ABCXYZ
+                            td(width="20%") 2016-05-01 10:00:00
+                            td(width="15%") 400000
+                            td(width="15%") 1
+                            td(width="20%")
+                                .btn.btn-update Sửa
+                            td(width="20%")
+                                .btn.btn-delete Xóa
+                        tr
+                            td(width="10%")
+                                .text-box-wrapper
+                                    .input-group
+                                        input.tb-input.width-100px(type="text")
+                            td(width="20%")
+                                .text-box-wrapper
+                                    .input-group
+                                        input.tb-input.width-200px(type="text")
+                            td(width="15%")
+                                .text-box-wrapper
+                                    .input-group
+                                        input.tb-input.width-175px(type="text")
+                            td(width="15%")
+                                .text-box-wrapper
+                                    .input-group
+                                        input.tb-input.width-175px(type="text")
+                            td(width="40%" colspan="2")
+                                .btn.btn-insert Thêm
+
+

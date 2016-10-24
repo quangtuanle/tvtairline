@@ -1,0 +1,392 @@
+extends layout
+
+block content
+    section
+        .tab-search.tab-search-long.tab-search-default
+            .container
+                .row
+                    .col-xs-12
+                        ul.nav.nav-tabs(role='tablist')
+                            li.tab-btn-wrapper.active(role='presentation')
+                                a.tab-btn(href='#flight', aria-controls='flight', role='tab', data-toggle='tab')
+                                    i.flaticon-transport-1
+                                    span.text FLIGHT
+                                    span.xs FIND YOUR FLIGHT
+                            li.tab-btn-wrapper(role='presentation')
+                                a.tab-btn(href='#transfer', aria-controls='transfer', role='tab', data-toggle='tab')
+                                    i.flaticon-transport-3
+                                    span.text TRANSFER
+                                    span.xs FIND TRANSFER
+                            li.tab-btn-wrapper(role='presentation')
+                                a.tab-btn(href='#hotel', aria-controls='hotel', role='tab', data-toggle='tab')
+                                    i.flaticon-three
+                                    span.text HOTEL
+                                    span.xs FIND HOTEL
+                            li.tab-btn-wrapper(role='presentation')
+                                a.tab-btn(href='#tours', aria-controls='tours', role='tab', data-toggle='tab')
+                                    i.flaticon-people
+                                    span.text TOURS
+                                    span.xs FIND TOURS
+                            li.tab-btn-wrapper(role='presentation')
+                                a.tab-btn(href='#car-rent', aria-controls='car-rent', role='tab', data-toggle='tab')
+                                    i.flaticon-transport-7
+                                    span.text CAR RENT
+                                    span.xs FIND CAR RENT
+                            li.tab-btn-wrapper(role='presentation')
+                                a.tab-btn(href='#cruises', aria-controls='cruises', role='tab', data-toggle='tab')
+                                    i.flaticon-transport-4
+                                    span.text CRUISES
+                                    span.xs FIND CRUISES
+            .tab-content-bg
+                .container
+                    .row
+                        .col-xs-12
+                            .tab-content
+                                #flight.tab-pane.fade.in.active(role='tabpanel')
+                                    .find-widget.find-flight-widget.widget
+                                        h4.title-widgets FIND YOUR FLIGHT
+                                        form.content-widget
+                                            .ffw-radio-selection
+                                                span.ffw-radio-btn-wrapper.margin-right-40
+                                                    input#flight-type-1.ffw-radio-btn(type='radio', name='flight type', value='one way', checked='checked')
+                                                    label.ffw-radio-label(for='flight-type-1') One Way
+                                                span.ffw-radio-btn-wrapper
+                                                    input#flight-type-2.ffw-radio-btn(type='radio', name='flight type', value='round trip')
+                                                    label.ffw-radio-label(for='flight-type-2') Round Trip
+                                                .stretch  
+                                            .text-input.small-margin-top
+                                                .place.text-box-wrapper
+                                                    label.tb-label Where do you live?
+                                                    .input-group
+                                                        input.tb-input.input-place-from(type='text', placeholder='Write the place')
+                                                    .place-from.hide
+                                                        .group-place-from
+                                                            .group-name Châu Á
+                                                            .list-place
+                                                                p.place-name Việt Nam
+                                                                p.place-name Lào
+                                                                p.place-name Campuchia
+                                                                p.place-name Singapore
+                                                        .group-place-from
+                                                            .group-name Châu Âu
+                                                            .list-place
+                                                                p.place-name Tây Ban Nha
+                                                                p.place-name Thổ Nhĩ Kỳ
+                                                                p.place-name Cộng Hòa Séc
+                                                                p.place-name Hungary
+                                                        .group-place-from
+                                                            .group-name Châu Mỹ
+                                                            .list-place
+                                                                p.place-name Canada
+                                                                p.place-name Hòa Kỳ
+                                                                p.place-name Green Land
+                                                                p.place-name Mexico
+                                                        .group-place-from
+                                                            .group-name Châu Phi
+                                                            .list-place
+                                                                p.place-name Algeria
+                                                                p.place-name Nigeria
+                                                                p.place-name Gwanda
+                                                                p.place-name Senegal
+                                                .input-daterange
+                                                    .text-box-wrapper.half
+                                                        label.tb-label Check in
+                                                        .input-group
+                                                            input.tb-input.datetimepickerWidget(type='text', placeholder='dd/mm/YYYY')
+                                                            i.tb-icon.fa.fa-calendar.input-group-addon
+                                                    .text-box-wrapper.half
+                                                        label.tb-label Check out
+                                                        .input-group
+                                                            input.tb-input.datetimepickerWidget(type='text', placeholder='dd/mm/YYYY')
+                                                            i.tb-icon.fa.fa-calendar.input-group-addon
+                                                .count.adult-count.text-box-wrapper
+                                                    label.tb-label Adult
+                                                    .select-wrapper
+                                                        // i.fa.fa-chevron-down
+                                                        select.form-control.custom-select.selectbox
+                                                            option(selected='selected') 1
+                                                            option 2
+                                                            option 3
+                                                            option 4
+                                                            option 5
+                                                            option 6
+                                                            option 7
+                                                            option 8
+                                                            option 9
+                                                .count.child-count.text-box-wrapper
+                                                    label.tb-label Child
+                                                    .select-wrapper
+                                                        // i.fa.fa-chevron-down
+                                                        select.form-control.custom-select.selectbox
+                                                            option(selected='selected') 0
+                                                            option 1
+                                                            option 2
+                                                            option 3
+                                                            option 4
+                                                            option 5
+                                                            option 6
+                                                            option 7
+                                                            option 8
+                                                            option 9
+                                                button.btn.btn-slide(type='submit', data-hover='SEARCH NOW')
+                                                    span.text SEARCH NOW
+                                                    span.icons.fa.fa-long-arrow-right
+                                            .text-input.small-margin-top
+                                                .place.text-box-wrapper
+                                                    label.tb-label Where do you want to go?
+                                                    .input-group
+                                                        input.tb-input(type='text', placeholder='Write the place')
+                                                .note.text-box-wrapper
+                                                    label.tb-label Notes
+                                                    .input-group
+                                                        input.tb-input(type='text', placeholder='Write your note')
+                                #transfer.tab-pane.fade(role='tabpanel')
+                                    .find-widget.find-transfer-widget.widget
+                                        h4.title-widgets FIND TRANSFER
+                                        form.content-widget
+                                            .ffw-radio-selection
+                                                span.ffw-radio-btn-wrapper.margin-right-40
+                                                    input#transfer-type-1.ffw-radio-btn(type='radio', name='flight type', value='one way', checked='checked')
+                                                    label.ffw-radio-label(for='transfer-type-1') One Way
+                                                span.ffw-radio-btn-wrapper
+                                                    input#transfer-type-2.ffw-radio-btn(type='radio', name='flight type', value='round trip')
+                                                    label.ffw-radio-label(for='transfer-type-2') Round Trip
+                                                .stretch  
+                                            .text-input.small-margin-top
+                                                .place.text-box-wrapper
+                                                    label.tb-label Where do you want to go?
+                                                    .input-group
+                                                        input.tb-input(type='text', placeholder='Write the place')
+                                                .date.text-box-wrapper
+                                                    label.tb-label When do you want to go?
+                                                    .input-group
+                                                        input.tb-input(type='text', placeholder='dd/mm/YYYY')
+                                                        i.tb-icon.fa.fa-calendar.input-group-addon
+                                                .count.adult-count.text-box-wrapper
+                                                    label.tb-label Adult
+                                                    .select-wrapper
+                                                        // i.fa.fa-chevron-down
+                                                        select.form-control.custom-select.selectbox
+                                                            option(selected='selected') 1
+                                                            option 2
+                                                            option 3
+                                                            option 4
+                                                            option 5
+                                                            option 6
+                                                            option 7
+                                                            option 8
+                                                            option 9
+                                                .count.child-count.text-box-wrapper
+                                                    label.tb-label Child
+                                                    .select-wrapper
+                                                        // i.fa.fa-chevron-down
+                                                        select.form-control.custom-select.selectbox
+                                                            option(selected='selected') 0
+                                                            option 1
+                                                            option 2
+                                                            option 3
+                                                            option 4
+                                                            option 5
+                                                            option 6
+                                                            option 7
+                                                            option 8
+                                                            option 9
+                                                button.btn.btn-slide(type='submit', data-hover='SEARCH NOW')
+                                                    span.text SEARCH NOW
+                                                    span.icons.fa.fa-long-arrow-right
+                                #hotel.tab-pane.fade(role='tabpanel')
+                                    .find-widget.find-hotel-widget.widget
+                                        h4.title-widgets FIND HOTEL
+                                        form.content-widget
+                                            .text-input.small-margin-top
+                                                .place.text-box-wrapper
+                                                    label.tb-label Where do you want to go?
+                                                    .input-group
+                                                        input.tb-input(type='text', placeholder='Write the place')
+                                                .input-daterange
+                                                    .text-box-wrapper.half
+                                                        label.tb-label Check in
+                                                        .input-group
+                                                            input.tb-input.datetimepickerWidget(type='text', placeholder='dd/mm/YYYY')
+                                                            i.tb-icon.fa.fa-calendar.input-group-addon
+                                                    .text-box-wrapper.half
+                                                        label.tb-label Check out
+                                                        .input-group
+                                                            input.tb-input.datetimepickerWidget(type='text', placeholder='dd/mm/YYYY')
+                                                            i.tb-icon.fa.fa-calendar.input-group-addon
+                                                .count.adult-count.text-box-wrapper
+                                                    label.tb-label Adult
+                                                    .select-wrapper
+                                                        // i.fa.fa-chevron-down
+                                                        select.form-control.custom-select.selectbox
+                                                            option(selected='selected') 1
+                                                            option 2
+                                                            option 3
+                                                            option 4
+                                                            option 5
+                                                            option 6
+                                                            option 7
+                                                            option 8
+                                                            option 9
+                                                .count.child-count.text-box-wrapper
+                                                    label.tb-label Child
+                                                    .select-wrapper
+                                                        // i.fa.fa-chevron-down
+                                                        select.form-control.custom-select.selectbox
+                                                            option(selected='selected') 0
+                                                            option 1
+                                                            option 2
+                                                            option 3
+                                                            option 4
+                                                            option 5
+                                                            option 6
+                                                            option 7
+                                                            option 8
+                                                            option 9
+                                                button.btn.btn-slide(type='submit', data-hover='SEARCH NOW')
+                                                    span.text SEARCH NOW
+                                                    span.icons.fa.fa-long-arrow-right
+                                #tours.tab-pane.fade(role='tabpanel')
+                                    .find-widget.find-tours-widget.widget
+                                        h4.title-widgets FIND TOURS
+                                        form.content-widget
+                                            .text-input.small-margin-top
+                                                .place.text-box-wrapper
+                                                    label.tb-label Where do you want to go?
+                                                    .input-group
+                                                        input.tb-input(type='text', placeholder='Write the place')
+                                                .date.text-box-wrapper
+                                                    label.tb-label When do you want to go?
+                                                    .input-group
+                                                        input.tb-input(type='text', placeholder='dd/mm/YYYY')
+                                                        i.tb-icon.fa.fa-calendar.input-group-addon
+                                                .count.adult-count.text-box-wrapper
+                                                    label.tb-label Adult
+                                                    .select-wrapper
+                                                        // i.fa.fa-chevron-down
+                                                        select.form-control.custom-select.selectbox
+                                                            option(selected='selected') 1
+                                                            option 2
+                                                            option 3
+                                                            option 4
+                                                            option 5
+                                                            option 6
+                                                            option 7
+                                                            option 8
+                                                            option 9
+                                                .count.child-count.text-box-wrapper
+                                                    label.tb-label Child
+                                                    .select-wrapper
+                                                        // i.fa.fa-chevron-down
+                                                        select.form-control.custom-select.selectbox
+                                                            option(selected='selected') 0
+                                                            option 1
+                                                            option 2
+                                                            option 3
+                                                            option 4
+                                                            option 5
+                                                            option 6
+                                                            option 7
+                                                            option 8
+                                                            option 9
+                                                button.btn.btn-slide(type='submit', data-hover='SEARCH NOW')
+                                                    span.text SEARCH NOW
+                                                    span.icons.fa.fa-long-arrow-right
+                                #car-rent.tab-pane.fade(role='tabpanel')
+                                    .find-widget.find-car-widget.widget
+                                        h4.title-widgets FIND CAR
+                                        form.content-widget
+                                            .text-input.small-margin-top
+                                                .place.text-box-wrapper
+                                                    label.tb-label Where do you want to go?
+                                                    .input-group
+                                                        input.tb-input(type='text', placeholder='Write the place')
+                                                .input-daterange
+                                                    .text-box-wrapper.half
+                                                        label.tb-label Start date
+                                                        .input-group
+                                                            input.tb-input(type='text', placeholder='dd/mm/YYYY')
+                                                            i.tb-icon.fa.fa-calendar.input-group-addon
+                                                    .text-box-wrapper.half
+                                                        label.tb-label Return date
+                                                        .input-group
+                                                            input.tb-input(type='text', placeholder='dd/mm/YYYY')
+                                                            i.tb-icon.fa.fa-calendar.input-group-addon
+                                                .count.car-count.text-box-wrapper
+                                                    label.tb-label No. of Car
+                                                    .select-wrapper
+                                                        // i.fa.fa-chevron-down
+                                                        select.form-control.custom-select.selectbox
+                                                            option(selected='selected') 1
+                                                            option 2
+                                                            option 3
+                                                            option 4
+                                                            option 5
+                                                            option 6
+                                                            option 7
+                                                            option 8
+                                                            option 9
+                                                button.btn.btn-slide(type='submit', data-hover='SEARCH NOW')
+                                                    span.text SEARCH NOW
+                                                    span.icons.fa.fa-long-arrow-right
+                                #cruises.tab-pane.fade(role='tabpanel')
+                                    .find-widget.find-cruises-widget.widget
+                                        h4.title-widgets FIND CRUISES
+                                        form.content-widget
+                                            .ffw-radio-selection
+                                                span.ffw-radio-btn-wrapper.margin-right-40
+                                                    input#cruises-type-1.ffw-radio-btn(type='radio', name='flight type', value='one way', checked='checked')
+                                                    label.ffw-radio-label(for='cruises-type-1') One Way
+                                                span.ffw-radio-btn-wrapper
+                                                    input#cruises-type-2.ffw-radio-btn(type='radio', name='flight type', value='round trip')
+                                                    label.ffw-radio-label(for='cruises-type-2') Round Trip
+                                                .stretch  
+                                            .text-input.small-margin-top
+                                                .place.text-box-wrapper
+                                                    label.tb-label Where do you want to go?
+                                                    .input-group
+                                                        input.tb-input(type='text', placeholder='Write the place')
+                                                .count.time-count.text-box-wrapper
+                                                    label.tb-label Time
+                                                    .select-wrapper
+                                                        // i.fa.fa-chevron-down
+                                                        select.form-control.custom-select.selectbox
+                                                            option(selected='selected') 08:00
+                                                            option 10:00
+                                                            option 12:00
+                                                            option 14:00
+                                                            option 16:00
+                                                            option 18:00
+                                                .count.adult-count.text-box-wrapper
+                                                    label.tb-label Adult
+                                                    .select-wrapper
+                                                        // i.fa.fa-chevron-down
+                                                        select.form-control.custom-select.selectbox
+                                                            option(selected='selected') 1
+                                                            option 2
+                                                            option 3
+                                                            option 4
+                                                            option 5
+                                                            option 6
+                                                            option 7
+                                                            option 8
+                                                            option 9
+                                                .count.child-count.text-box-wrapper
+                                                    label.tb-label Child
+                                                    .select-wrapper
+                                                        // i.fa.fa-chevron-down
+                                                        select.form-control.custom-select.selectbox
+                                                            option(selected='selected') 0
+                                                            option 1
+                                                            option 2
+                                                            option 3
+                                                            option 4
+                                                            option 5
+                                                            option 6
+                                                            option 7
+                                                            option 8
+                                                            option 9
+                                                button.btn.btn-slide(type='submit', data-hover='SEARCH NOW')
+                                                    span.text SEARCH NOW
+                                                    span.icons.fa.fa-long-arrow-right
+
