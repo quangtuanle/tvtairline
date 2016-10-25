@@ -30,8 +30,12 @@
             }
         };
 
-        $scope.getFromPlace = function(id) {
-            $scope.selectedOrigin = $scope.fromPlaces[id];
+        $scope.getFromPlace = function(item) {
+            $scope.selectedOrigin = item;
+        };
+
+        $scope.getToPlace = function(item) {
+            $scope.selectedDestination = item;
         };
 
         function parseData(data) {

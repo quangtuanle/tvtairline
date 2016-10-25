@@ -59,12 +59,12 @@ block content
                                                     label.tb-label Where do you live?
                                                     .input-group
                                                         input.tb-input.input-place-from(type='text', placeholder='Write the place',
-                                                            ng-click='OriginClick()', ng-model="selectedOrigin")
+                                                            ng-click='OriginClick()', ng-model="selectedOrigin.AirPortName")
                                                     .place-from.hide
                                                         .group-place-from(ng-repeat="groupPlace in search.fromPlaces")
                                                             .group-name {{ groupPlace.groupName }}
-                                                            .list-place(ng-repeat="item in groupFromPlace.items")
-                                                                p.place-name(ng-click="getPlace({{$index}})") {{ item.AirPortName }}
+                                                            .list-place(ng-repeat="item in groupPlace.items")
+                                                                p.place-name(ng-click="getFromPlace(item)") {{ item.AirPortName }}
                                                 .input-daterange
                                                     .text-box-wrapper.half
                                                         label.tb-label Check in
@@ -110,12 +110,12 @@ block content
                                                     label.tb-label Where do you want to go?
                                                     .input-group
                                                         input.tb-input.input-place-to(type='text', placeholder='Write the place',
-                                                            ng-click='DestinationClick()', ng-model="selectedDestination")
+                                                            ng-click='DestinationClick()', ng-model="selectedDestination.AirPortName")
                                                     .place-to.hide
                                                         .group-place-to(ng-repeat="groupPlace in search.toPlaces")
                                                             .group-name {{ groupPlace.groupName }}
                                                             .list-place(ng-repeat="item in groupPlace.items")
-                                                                p.place-name {{ item.AirPortName }}
+                                                                p.place-name(ng-click="getToPlace(item)") {{ item.AirPortName }}
                                                 .note.text-box-wrapper
                                                     label.tb-label Notes
                                                     .input-group.note
