@@ -45,7 +45,7 @@ namespace AirplaneReservationWebService.DAL
             try
             {
                 _connect.Open();
-                string sql = "select * from flight where (origin = '" + origin + "' and destination = '" + destination + "')";
+                string sql = "select * from flight where (origin = '" + origin + "' and destination = '" + destination + "' and departureDates = '" + departuredates + "')";
                 SqlDataAdapter _da = new SqlDataAdapter(sql, _connect);
                 DataTable _dt = new DataTable();
                 _da.Fill(_dt);

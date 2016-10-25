@@ -57,10 +57,10 @@ namespace AirplaneReservationWebService.Controllers
         }
 
         [HttpDelete]
-        public bool DeleteBooking(string flightbooking)
+        public bool DeleteBooking(string bookingcode)
         {
             DALBooking DAL_Booking = new DALBooking();
-            return DAL_Booking.DeleteBooking(flightbooking);
+            return DAL_Booking.DeleteBooking(bookingcode);
         }
     }
 }
