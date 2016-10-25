@@ -63,8 +63,8 @@ block content
                                                     .place-from.hide
                                                         .group-place-from(ng-repeat="groupPlace in search.fromPlaces")
                                                             .group-name {{ groupPlace.groupName }}
-                                                            .list-place(ng-repeat="item in groupPlace.items")
-                                                                p.place-name {{ item.AirPortName }}
+                                                            .list-place(ng-repeat="item in groupFromPlace.items")
+                                                                p.place-name(ng-click="getPlace({{$index}})") {{ item.AirPortName }}
                                                 .input-daterange
                                                     .text-box-wrapper.half
                                                         label.tb-label Check in

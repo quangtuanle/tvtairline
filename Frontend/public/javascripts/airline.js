@@ -9,7 +9,7 @@
                 // log error
                 alert("Có lỗi!!!");
             });
-        }
+        };
 
         $scope.DestinationClick = function() {
             if ($scope.selectedOrigin == null) {
@@ -21,16 +21,18 @@
                 });
             }
             else {
-                //Test thử
-                $scope.selectedOrigin = "SGN";
-                $http.get('http://airlinereservation.somee.com/api/v1/Destinations?origin=' + $scope.selectedOrigin).success(function (data, status, headers, config) {
+                $http.get('http://airlinereservation.somee.com/api/v1/Destinations?origin=' + $scope.selectedOrigin.AirPortCode).success(function (data, status, headers, config) {
                     $scope.search.toPlaces = parseData(data);
                 }).error(function (data, status, headers, config) {
                     // log error
                     alert("Có lỗi!!!");
                 });
             }
-        }
+        };
+
+        $scope.getFromPlace = function(id) {
+            $scope.selectedOrigin = $scope.fromPlaces[id];
+        };
 
         function parseData(data) {
             var groups = [];
