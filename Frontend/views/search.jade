@@ -79,7 +79,7 @@ block content
                                                     label.tb-label Adult
                                                     .select-wrapper
                                                         // i.fa.fa-chevron-down
-                                                        select.form-control.custom-select.selectbox#select-age-adult
+                                                        select.form-control.custom-select.selectbox#select-age-adult(ng-model="selectAdultQuantity" ng-change="showSelectValue(mySelectAdultQuantity)")
                                                             option(selected='selected' value="1") 1
                                                             option(value="2") 2
                                                             option(value="3") 3

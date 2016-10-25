@@ -26,8 +26,15 @@ namespace AirplaneReservationWebService.Controllers
         public string InsertNewBooking(double payment)
         {
             DALBooking DAL_Booking = new DALBooking();
-            string bookingcode = GenerateBookingCode(6);
-            //them kiem tra dieu kien
+            string bookingcode;
+            do
+            {
+                 bookingcode = GenerateBookingCode(6);
+                
+            }
+            while (DAL_Booking.CheckBookingCodeExisted(bookingcode) != null);
+        
+
 
             string datetimes = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
             if(DAL_Booking.InsertNewBooking(bookingcode, datetimes, payment, false))

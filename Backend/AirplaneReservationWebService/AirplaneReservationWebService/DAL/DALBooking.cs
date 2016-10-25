@@ -105,5 +105,25 @@ namespace AirplaneReservationWebService.DAL
                 return false;
             }
         }
+
+        public string CheckBookingCodeExisted(string bookingcode)
+        {
+            try
+            {
+                string result;
+                _connect.Open();
+                string sql = "select bookingCode from Booking where bookingCode = '" + bookingcode + "'";
+                SqlCommand cmd = new SqlCommand(sql, _connect);
+
+                result =  (string)cmd.ExecuteScalar();
+                _connect.Close();
+                return result;
+
+            }
+            catch
+            {
+                return null;
+            }
+        }
     }
 }
