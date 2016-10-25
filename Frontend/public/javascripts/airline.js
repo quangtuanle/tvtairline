@@ -1,7 +1,20 @@
 (function () {
     var app = angular.module("AirlineReservation", []);
 
-    app.controller("SearchController", function ($scope, $http){
+    app.factory('dataShare',function($rootScope){
+        var service = {};
+        service.data = false;
+        service.sendData = function(data){
+            this.data = data;
+            $rootScope.$broadcast('data_shared');
+        };
+        service.getData = function(){
+            return this.data;
+        };
+        return service;
+    });
+
+    app.controller("SearchController", function ($scope, $http, dataShare){
         $scope.OriginClick = function() {
             $http.get('http://airlinereservation.somee.com/api/v1/Origins').success(function (data, status, headers, config) {
                 $scope.search.fromPlaces = parseData(data);
@@ -38,6 +51,16 @@
             $scope.selectedDestination = item;
         };
 
+        // $scope.GoToFlight = function(origin, destination) {
+        //     var flight = {};
+        //     flight["origin"] = origin;
+        //     flight["destination"] = destination;
+        //     flight["departureDates"] = $('.tb-input.datetimepickerWidget.date-in').val();
+        //     flight["passengerQuantity"] = 2;
+        //     dataShare.sendData(flight);
+        //     window.location = "/one-way-flights";
+        // };
+
         function parseData(data) {
             var groups = [];
             var places = [];
@@ -63,8 +86,38 @@
         }
     });
 
-    app.controller("FlightOneWayController", function(){
 
+    app.controller("FlightOneWayController", function(dataShare, $scope, $http){
+
+        var flight;
+        $scope.$on('data_shared',function() {
+            console.log(dataShare.getData());
+            flight = dataShare.getData();
+        });
+        // console.log(flight.departureDates);
+        // console.log(flight.destination);
+        // //var date = new Date("2016-10-05");
+        // $scope.flightOneWay.flights = [];
+        // for (var i = 0; i < 7; i++) {
+        //     var url = "http://airlinereservation.somee.com/api/v1/Flights?origin=" + flight.origin
+        //         + "&destination=" + flight.destination + "&departureDates=" + date.toISOString().slice(0, 10).replace('/g',"") + "&passengerquantity=" + flight.passengerQuantity;
+        //     //var url = "http://airlinereservation.somee.com/api/v1/Flights?origin=SGN&destination=TBB&departuredates=" + date.toISOString().slice(0, 10).replace('/g',"") + "&passengerquantity=1";
+        //     $http.get(url)
+        //         .success(function (data, status, headers, config) {
+        //             $scope.flightOneWay.flights.push(parseFlightData(data, date.toISOString().slice(0, 10).replace('/g',"")));
+        //         }).error(function (data, status, headers, config) {
+        //         // log error
+        //         alert("Có lỗi!!!");
+        //     });
+        //     date.setDate(date.getDate() + 1);
+        // }
+        //
+        // function parseFlightData(data, departureDates) {
+        //     var place = {};
+        //     place["date"] = angular.copy(departureDates);
+        //     place["itemFlights"] = data;
+        //     return place;
+        // }
     });
 
     app.controller("FlightRoundTripController", function(){
@@ -72,6 +125,7 @@
     });
 
 })();
+
 
 
 

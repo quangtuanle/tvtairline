@@ -58,7 +58,7 @@ block content
                                                 .place.text-box-wrapper
                                                     label.tb-label Where do you live?
                                                     .input-group
-                                                        input.tb-input.input-place-from(type='text', placeholder='Write the place',
+                                                        input.tb-input.input-place-from(type='text', readonly, placeholder='Write the place',
                                                             ng-click='OriginClick()', ng-model="selectedOrigin.AirPortName")
                                                     .place-from.hide
                                                         .group-place-from(ng-repeat="groupPlace in search.fromPlaces")
@@ -69,12 +69,12 @@ block content
                                                     .text-box-wrapper.half
                                                         label.tb-label Check in
                                                         .input-group
-                                                            input.tb-input.datetimepickerWidget(type='text', placeholder='dd/mm/YYYY')
+                                                            input.tb-input.datetimepickerWidget.date-in(type='text', placeholder='YYYY-mm-dd')
                                                             i.tb-icon.fa.fa-calendar.input-group-addon
                                                     .text-box-wrapper.half
                                                         label.tb-label Check out
                                                         .input-group
-                                                            input.tb-input.datetimepickerWidget(type='text', placeholder='dd/mm/YYYY')
+                                                            input.tb-input.datetimepickerWidget.date-out(type='text', placeholder='YYYY-mm-dd')
                                                             i.tb-icon.fa.fa-calendar.input-group-addon
                                                 .count.adult-count.text-box-wrapper
                                                     label.tb-label Adult
@@ -102,14 +102,15 @@ block content
                                                             option(selected='selected' value="0") 0
                                                             option(value="1") 1
                                                             option(value="2") 2
-                                                button.btn.btn-slide(type='submit', data-hover='SEARCH NOW')
+                                                button.btn.btn-slide(type='submit', data-hover='SEARCH NOW',
+                                                    ng-click="GoToFlight(selectedOrigin, selectedDestination)")
                                                     span.text SEARCH NOW
                                                     span.icons.fa.fa-long-arrow-right
                                             .text-input.small-margin-top
                                                 .place.text-box-wrapper
                                                     label.tb-label Where do you want to go?
                                                     .input-group
-                                                        input.tb-input.input-place-to(type='text', placeholder='Write the place',
+                                                        input.tb-input.input-place-to(type='text', readonly, placeholder='Write the place',
                                                             ng-click='DestinationClick()', ng-model="selectedDestination.AirPortName")
                                                     .place-to.hide
                                                         .group-place-to(ng-repeat="groupPlace in search.toPlaces")
