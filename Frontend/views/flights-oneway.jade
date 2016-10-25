@@ -1,7 +1,7 @@
 extends layout
 
 block content
-    section.page-main.padding-top.padding-bottom
+    section.page-main.padding-top.padding-bottom(ng-controller="FlightOneWayController as flightOneWay")
         .container
             .row
                 .col-md-8.main-left
@@ -14,16 +14,16 @@ block content
                             li Tra cứu thông tin Hành lý và Phí dịch vụ đặc biệt.
                             li Các giá không đảm bảo cho đến khi hoàn thành giao dịch. Mỗi giá có quy định và điều kiện áp dụng tương ứng, vui lòng đọc kỹ.
                             li Tra cứu dịch vụ tham quan thành phố miễn phí cho một số hành trình quá cảnh tại Việt Nam.
-                    .box-choose-flight(ng-controller="FlightOneWayController as flightOneWay")
+                    .box-choose-flight
                         .group-title
                             .sub-title
                                 p.text Choose
                                 i.icons.icon-flight.fa.fa-forward
-                            h2.main-title CHUYẾN BAY CHIỀU ĐI
+                            h2.main-title CHUYẾN BAY MỘT CHIỀU
                         .group-locate
-                            p.locate.origin Sài Gòn
+                            p.locate.origin {{ flightOneWay.originName }}
                             i.fa.fa-exchange.icon-exchange
-                            p.locate.destination Khánh Hòa
+                            p.locate.destination {{ flightOneWay.destinationName }}
                         .sub-info Giá vé không bao gồm thuế và phí
                         .info-ticket-slider
                             .info-ticket-slider-nav
@@ -50,9 +50,9 @@ block content
                                                     td.foo-info {{ item.DepartureDates }}
                                                     td.foo-info {{ item.DepartureTimes }}
                                                     td.foo-info.foo-price
-                                                        input.tb-input.tb-checkbox-flight(type="checkbox")
+                                                        input.tb-input.tb-checkbox-flight(type="radio" name="selectRadioFlight" ng-click="onFlightSelect(item)")
                                                         | {{ item.Price | currency }}
-                    a.btn.btn-continue.pull-right Tiếp tục
+                    a.btn.btn-continue.pull-right(ng-click="flightOneWay.onContinueClick()") Tiếp tục
                 .col-md-4.sidebar-widget
                     .col-2
                         .search-widget.widget
@@ -71,7 +71,7 @@ block content
                                     .box-summary-detail
                                         .single-widget-item
                                             p.style-title-1 Total:
-                                            h2.total-price 2.200.000 VND
+                                            h2.total-price {{ flightOneWay.flightSelect.Price }} VND
                                         .single-widget-item
                                             .title-item
                                                 i.fa.fa-plane.icons-2
@@ -82,30 +82,30 @@ block content
                                                 li
                                                     p Flight - VN Airs
                                                 li
-                                                    p Depart - Ho Chi Minh City
+                                                    p Depart - {{ flightOneWay.flightSelect.Origin }}
                                                 li
                                                     p.inline-block Departure
-                                                    p.inline-block.text-align-right 18:35 Thu, 20 Oct
+                                                    p.inline-block.text-align-right {{ flightOneWay.flightSelect.DepartureTimes }} {{ flightOneWay.flightSelect.DepartureDates }}
                                                 li
-                                                    p Price - 3.000.000
+                                                    p Price - {{ flightOneWay.flightSelect.Price }} VND
                                                 li
-                                                    p Arrive - California, New York
+                                                    p Arrive - {{ flightOneWay.flightSelect.Destination }}
                                                 li
                                                     p.inline-block Arrival
                                                     p.inline-block.text-align-right 19:25 Thu, 20 Oct
                                         .single-widget-item
                                             .title-item
                                                 i.fa.fa-user.icons-2
-                                                h4.style-title-2 Passenger: 1
+                                                h4.style-title-2 Passenger: {{ flightOneWay.passengerQuantity }}
                                             ul.info-passenger
                                                 li
                                                     p Price Summary:
                                                 li
                                                     p.inline-block Fare
-                                                    p.inline-block.text-align-right 1.900.000 VND
+                                                    p.inline-block.text-align-right Free
                                                 li
                                                     p.inline-block Taxes
-                                                    p.inline-block.text-align-right 320.000 VND
+                                                    p.inline-block.text-align-right Free
                                                 li
                                                     p Discount
                                                 li
@@ -113,4 +113,4 @@ block content
                                                 li
                                                     p Ancillaries
                                         .single-widget-item
-                                            h2.total-price.style-1 2.200.000 VND
+                                            h2.total-price.style-1 {{ flightOneWay.flightSelect.Price }} VND

@@ -1,7 +1,7 @@
 extends layout
 
 block content
-    section.page-main.padding-top.padding-bottom
+    section.page-main.padding-top.padding-bottom(ng-controller="FlightRoundTripController as flightRoundTrip")
         .container
             .row
                 .col-md-8.main-left
@@ -21,382 +21,76 @@ block content
                                 i.icons.icon-flight.fa.fa-forward
                             h2.main-title CHUYẾN BAY CHIỀU ĐI
                         .group-locate
-                            p.locate.origin Sài Gòn
+                            p.locate.origin {{ flightRoundTrip.originName }}
                             i.fa.fa-exchange.icon-exchange
-                            p.locate.destination Khánh Hòa
+                            p.locate.destination {{ flightRoundTrip.destinationName }}
                         .sub-info Giá vé không bao gồm thuế và phí
                         .info-ticket-slider
                             .info-ticket-slider-nav
-                                .for-item
+                                .for-item(ng-repeat="flights in flightRoundTrip.firstFlights")
                                     .box-info-ticket-mini
-                                        .date-ticket Mon 21 June
-                                        .price-ticket 2.000.000
-                                .for-item
-                                    .box-info-ticket-mini
-                                        .date-ticket Tue 22 June
-                                        .price-ticket 3.000.000
-                                .for-item
-                                    .box-info-ticket-mini.active
-                                        .date-ticket Wed 23 June
-                                        .price-ticket 2.000.000
-                                .for-item
-                                    .box-info-ticket-mini
-                                        .date-ticket Thu 24 June
-                                        .price-ticket 3.000.000
-                                .for-item
-                                    .box-info-ticket-mini
-                                        .date-ticket Fri 25 June
-                                        .price-ticket 2.000.000
-                                .for-item
-                                    .box-info-ticket-mini
-                                        .date-ticket Sat 26 June
-                                        .price-ticket 3.000.000
-                                .for-item
-                                    .box-info-ticket-mini
-                                        .date-ticket Sun 27 June
-                                        .price-ticket 3.000.000
+                                        .date-ticket {{ flights.date }}
+                                        .price-ticket {{ flights.itemFlights[0].Price }}
                             .info-ticket-slider-for
-                                .for-nav
+                                .for-nav(ng-repeat="flights in flightRoundTrip.firstFlights")
                                     .box-info-ticket-full
                                         table.table-flight
                                             tbody
                                                 tr.bg-color-1
                                                     td.foo-info Flight
-                                                    td.foo-info Operated By
+                                                    td.foo-info Class Level
+                                                    td.foo-info Price Level
                                                     td.foo-info Depart
                                                     td.foo-info Arrive
-                                                    td.foo-info Stops
                                                     td.foo-info.foo-price Price Per Person
-                                                tr.bg-color-2.tr-info-flight
-                                                    td.foo-info VN1600
-                                                    td.foo-info Vietnam Airlines
-                                                    td.foo-info 10:25
-                                                    td.foo-info 12:25
-                                                    td.foo-info 0
+                                                tr.bg-color-2.tr-info-flight(ng-repeat="item in flights.itemFlights")
+                                                    td.foo-info {{ item.FlightCode }}
+                                                    td.foo-info {{ item.ClassLevel }}
+                                                    td.foo-info {{ item.PriceLevel }}
+                                                    td.foo-info {{ item.DepartureDates }}
+                                                    td.foo-info {{ item.DepartureTimes }}
                                                     td.foo-info.foo-price
-                                                        input.tb-input.tb-checkbox-flight(type="checkbox")
-                                                        | 1.000.000
-                                                tr.bg-color-2.tr-info-flight
-                                                    td.foo-info VN1800
-                                                    td.foo-info Vietnam Airlines
-                                                    td.foo-info 14:25
-                                                    td.foo-info 22:55
-                                                    td.foo-info 0
-                                                    td.foo-info.foo-price
-                                                        input.tb-input.tb-checkbox-flight(type="checkbox")
-                                                        | 1.000.000
-                                .for-nav
-                                    .box-info-ticket-full
-                                        table.table-flight
-                                            tbody
-                                                tr.bg-color-1
-                                                    td.foo-info Flight
-                                                    td.foo-info Operated By
-                                                    td.foo-info Depart
-                                                    td.foo-info Arrive
-                                                    td.foo-info Stops
-                                                    td.foo-info.foo-price Price Per Person
-                                                tr.bg-color-2.tr-info-flight
-                                                    td.foo-info VN1600
-                                                    td.foo-info Vietnam Airlines
-                                                    td.foo-info 10:25
-                                                    td.foo-info 12:25
-                                                    td.foo-info 0
-                                                    td.foo-info.foo-price
-                                                        input.tb-input.tb-checkbox-flight(type="checkbox")
-                                                        | 1.000.000
-                                .for-nav
-                                    .box-info-ticket-full
-                                        table.table-flight
-                                            tbody
-                                                tr.bg-color-1
-                                                    td.foo-info Flight
-                                                    td.foo-info Operated By
-                                                    td.foo-info Depart
-                                                    td.foo-info Arrive
-                                                    td.foo-info Stops
-                                                    td.foo-info.foo-price Price Per Person
-                                                tr.bg-color-2.tr-info-flight
-                                                    td.foo-info VN1600
-                                                    td.foo-info Vietnam Airlines
-                                                    td.foo-info 10:25
-                                                    td.foo-info 12:25
-                                                    td.foo-info 0
-                                                    td.foo-info.foo-price
-                                                        input.tb-input.tb-checkbox-flight(type="checkbox")
-                                                        | 1.000.000
-                                .for-nav
-                                    .box-info-ticket-full
-                                        table.table-flight
-                                            tbody
-                                                tr.bg-color-1
-                                                    td.foo-info Flight
-                                                    td.foo-info Operated By
-                                                    td.foo-info Depart
-                                                    td.foo-info Arrive
-                                                    td.foo-info Stops
-                                                    td.foo-info.foo-price Price Per Person
-                                                tr.bg-color-2.tr-info-flight
-                                                    td.foo-info VN1600
-                                                    td.foo-info Vietnam Airlines
-                                                    td.foo-info 10:25
-                                                    td.foo-info 12:25
-                                                    td.foo-info 0
-                                                    td.foo-info.foo-price
-                                                        input.tb-input.tb-checkbox-flight(type="checkbox")
-                                                        | 1.000.000
-                                .for-nav
-                                    .box-info-ticket-full
-                                        table.table-flight
-                                            tbody
-                                                tr.bg-color-1
-                                                    td.foo-info Flight
-                                                    td.foo-info Operated By
-                                                    td.foo-info Depart
-                                                    td.foo-info Arrive
-                                                    td.foo-info Stops
-                                                    td.foo-info.foo-price Price Per Person
-                                                tr.bg-color-2.tr-info-flight
-                                                    td.foo-info VN1600
-                                                    td.foo-info Vietnam Airlines
-                                                    td.foo-info 10:25
-                                                    td.foo-info 12:25
-                                                    td.foo-info 0
-                                                    td.foo-info.foo-price
-                                                        input.tb-input.tb-checkbox-flight(type="checkbox")
-                                                        | 1.000.000
-                                .for-nav
-                                    .box-info-ticket-full
-                                        table.table-flight
-                                            tbody
-                                                tr.bg-color-1
-                                                    td.foo-info Flight
-                                                    td.foo-info Operated By
-                                                    td.foo-info Depart
-                                                    td.foo-info Arrive
-                                                    td.foo-info Stops
-                                                    td.foo-info.foo-price Price Per Person
-                                                tr.bg-color-2.tr-info-flight
-                                                    td.foo-info VN1600
-                                                    td.foo-info Vietnam Airlines
-                                                    td.foo-info 10:25
-                                                    td.foo-info 12:25
-                                                    td.foo-info 0
-                                                    td.foo-info.foo-price
-                                                        input.tb-input.tb-checkbox-flight(type="checkbox")
-                                                        | 1.000.000
-                                .for-nav
-                                    .box-info-ticket-full
-                                        table.table-flight
-                                            tbody
-                                                tr.bg-color-1
-                                                    td.foo-info Flight
-                                                    td.foo-info Operated By
-                                                    td.foo-info Depart
-                                                    td.foo-info Arrive
-                                                    td.foo-info Stops
-                                                    td.foo-info.foo-price Price Per Person
-                                                tr.bg-color-2.tr-info-flight
-                                                    td.foo-info VN1600
-                                                    td.foo-info Vietnam Airlines
-                                                    td.foo-info 10:25
-                                                    td.foo-info 12:25
-                                                    td.foo-info 0
-                                                    td.foo-info.foo-price
-                                                        input.tb-input.tb-checkbox-flight(type="checkbox")
-                                                        | 1.000.000
+                                                        input.tb-input.tb-checkbox-flight(type="radio" name="selectRadioFirstFlight" ng-click="onFirstFlightSelect(item)")
+                                                        | {{ item.Price | currency }}
                     .box-choose-flight
                         .group-title
                             .sub-title
                                 p.text Choose
-                                i.icons.icon-flight.fa.fa-backward
+                                i.icons.icon-flight.fa.fa-forward
                             h2.main-title CHUYẾN BAY CHIỀU VỀ
                         .group-locate
-                            p.locate.origin Khánh Hòa
+                            p.locate.origin {{ flightRoundTrip.destinationName }}
                             i.fa.fa-exchange.icon-exchange
-                            p.locate.destination Sài Gòn
+                            p.locate.destination {{ flightRoundTrip.originName }}
                         .sub-info Giá vé không bao gồm thuế và phí
                         .info-ticket-slider
                             .info-ticket-slider-nav
-                                .for-item
+                                .for-item(ng-repeat="flights in flightRoundTrip.secondFlights")
                                     .box-info-ticket-mini
-                                        .date-ticket Mon 21 June
-                                        .price-ticket 2.000.000
-                                .for-item
-                                    .box-info-ticket-mini
-                                        .date-ticket Tue 22 June
-                                        .price-ticket 3.000.000
-                                .for-item
-                                    .box-info-ticket-mini.active
-                                        .date-ticket Wed 23 June
-                                        .price-ticket 2.000.000
-                                .for-item
-                                    .box-info-ticket-mini
-                                        .date-ticket Thu 24 June
-                                        .price-ticket 3.000.000
-                                .for-item
-                                    .box-info-ticket-mini
-                                        .date-ticket Fri 25 June
-                                        .price-ticket 2.000.000
-                                .for-item
-                                    .box-info-ticket-mini
-                                        .date-ticket Sat 26 June
-                                        .price-ticket 3.000.000
-                                .for-item
-                                    .box-info-ticket-mini
-                                        .date-ticket Sun 27 June
-                                        .price-ticket 3.000.000
+                                        .date-ticket {{ flights.date }}
+                                        .price-ticket {{ flights.itemFlights[0].Price }}
                             .info-ticket-slider-for
-                                .for-nav
+                                .for-nav(ng-repeat="flights in flightRoundTrip.secondFlights")
                                     .box-info-ticket-full
                                         table.table-flight
                                             tbody
                                                 tr.bg-color-1
                                                     td.foo-info Flight
-                                                    td.foo-info Operated By
+                                                    td.foo-info Class Level
+                                                    td.foo-info Price Level
                                                     td.foo-info Depart
                                                     td.foo-info Arrive
-                                                    td.foo-info Stops
                                                     td.foo-info.foo-price Price Per Person
-                                                tr.bg-color-2.tr-info-flight
-                                                    td.foo-info VN1600
-                                                    td.foo-info Vietnam Airlines
-                                                    td.foo-info 10:25
-                                                    td.foo-info 12:25
-                                                    td.foo-info 0
+                                                tr.bg-color-2.tr-info-flight(ng-repeat="item in flights.itemFlights")
+                                                    td.foo-info {{ item.FlightCode }}
+                                                    td.foo-info {{ item.ClassLevel }}
+                                                    td.foo-info {{ item.PriceLevel }}
+                                                    td.foo-info {{ item.DepartureDates }}
+                                                    td.foo-info {{ item.DepartureTimes }}
                                                     td.foo-info.foo-price
-                                                        input.tb-input.tb-checkbox-flight(type="checkbox")
-                                                        | 1.000.000
-                                                tr.bg-color-2.tr-info-flight
-                                                    td.foo-info VN1800
-                                                    td.foo-info Vietnam Airlines
-                                                    td.foo-info 14:25
-                                                    td.foo-info 22:55
-                                                    td.foo-info 0
-                                                    td.foo-info.foo-price
-                                                        input.tb-input.tb-checkbox-flight(type="checkbox")
-                                                        | 1.000.000
-                                .for-nav
-                                    .box-info-ticket-full
-                                        table.table-flight
-                                            tbody
-                                                tr.bg-color-1
-                                                    td.foo-info Flight
-                                                    td.foo-info Operated By
-                                                    td.foo-info Depart
-                                                    td.foo-info Arrive
-                                                    td.foo-info Stops
-                                                    td.foo-info.foo-price Price Per Person
-                                                tr.bg-color-2.tr-info-flight
-                                                    td.foo-info VN1600
-                                                    td.foo-info Vietnam Airlines
-                                                    td.foo-info 10:25
-                                                    td.foo-info 12:25
-                                                    td.foo-info 0
-                                                    td.foo-info.foo-price
-                                                        input.tb-input.tb-checkbox-flight(type="checkbox")
-                                                        | 1.000.000
-                                .for-nav
-                                    .box-info-ticket-full
-                                        table.table-flight
-                                            tbody
-                                                tr.bg-color-1
-                                                    td.foo-info Flight
-                                                    td.foo-info Operated By
-                                                    td.foo-info Depart
-                                                    td.foo-info Arrive
-                                                    td.foo-info Stops
-                                                    td.foo-info.foo-price Price Per Person
-                                                tr.bg-color-2.tr-info-flight
-                                                    td.foo-info VN1600
-                                                    td.foo-info Vietnam Airlines
-                                                    td.foo-info 10:25
-                                                    td.foo-info 12:25
-                                                    td.foo-info 0
-                                                    td.foo-info.foo-price
-                                                        input.tb-input.tb-checkbox-flight(type="checkbox")
-                                                        | 1.000.000
-                                .for-nav
-                                    .box-info-ticket-full
-                                        table.table-flight
-                                            tbody
-                                                tr.bg-color-1
-                                                    td.foo-info Flight
-                                                    td.foo-info Operated By
-                                                    td.foo-info Depart
-                                                    td.foo-info Arrive
-                                                    td.foo-info Stops
-                                                    td.foo-info.foo-price Price Per Person
-                                                tr.bg-color-2.tr-info-flight
-                                                    td.foo-info VN1600
-                                                    td.foo-info Vietnam Airlines
-                                                    td.foo-info 10:25
-                                                    td.foo-info 12:25
-                                                    td.foo-info 0
-                                                    td.foo-info.foo-price
-                                                        input.tb-input.tb-checkbox-flight(type="checkbox")
-                                                        | 1.000.000
-                                .for-nav
-                                    .box-info-ticket-full
-                                        table.table-flight
-                                            tbody
-                                                tr.bg-color-1
-                                                    td.foo-info Flight
-                                                    td.foo-info Operated By
-                                                    td.foo-info Depart
-                                                    td.foo-info Arrive
-                                                    td.foo-info Stops
-                                                    td.foo-info.foo-price Price Per Person
-                                                tr.bg-color-2.tr-info-flight
-                                                    td.foo-info VN1600
-                                                    td.foo-info Vietnam Airlines
-                                                    td.foo-info 10:25
-                                                    td.foo-info 12:25
-                                                    td.foo-info 0
-                                                    td.foo-info.foo-price
-                                                        input.tb-input.tb-checkbox-flight(type="checkbox")
-                                                        | 1.000.000
-                                .for-nav
-                                    .box-info-ticket-full
-                                        table.table-flight
-                                            tbody
-                                                tr.bg-color-1
-                                                    td.foo-info Flight
-                                                    td.foo-info Operated By
-                                                    td.foo-info Depart
-                                                    td.foo-info Arrive
-                                                    td.foo-info Stops
-                                                    td.foo-info.foo-price Price Per Person
-                                                tr.bg-color-2.tr-info-flight
-                                                    td.foo-info VN1600
-                                                    td.foo-info Vietnam Airlines
-                                                    td.foo-info 10:25
-                                                    td.foo-info 12:25
-                                                    td.foo-info 0
-                                                    td.foo-info.foo-price
-                                                        input.tb-input.tb-checkbox-flight(type="checkbox")
-                                                        | 1.000.000
-                                .for-nav
-                                    .box-info-ticket-full
-                                        table.table-flight
-                                            tbody
-                                                tr.bg-color-1
-                                                    td.foo-info Flight
-                                                    td.foo-info Operated By
-                                                    td.foo-info Depart
-                                                    td.foo-info Arrive
-                                                    td.foo-info Stops
-                                                    td.foo-info.foo-price Price Per Person
-                                                tr.bg-color-2.tr-info-flight
-                                                    td.foo-info VN1600
-                                                    td.foo-info Vietnam Airlines
-                                                    td.foo-info 10:25
-                                                    td.foo-info 12:25
-                                                    td.foo-info 0
-                                                    td.foo-info.foo-price
-                                                        input.tb-input.tb-checkbox-flight(type="checkbox")
-                                                        | 1.000.000
-                    a.btn.btn-continue.pull-right Tiếp tục
+                                                        input.tb-input.tb-checkbox-flight(type="radio" name="selectRadioSecondFlight" ng-click="onSecondFlightSelect(item)")
+                                                        | {{ item.Price | currency }}
+                    a.btn.btn-continue.pull-right(ng-click="flightRoundTrip.onContinueClick()") Tiếp tục
                 .col-md-4.sidebar-widget
                     .col-2
                         .search-widget.widget
@@ -415,7 +109,7 @@ block content
                                     .box-summary-detail
                                         .single-widget-item
                                             p.style-title-1 Total:
-                                            h2.total-price 2.200.000 VND
+                                            h2.total-price {{ flightRoundTrip.firstFlightSelect.Price + flightRoundTrip.secondFlightSelect.Price }} VND
                                         .single-widget-item
                                             .title-item
                                                 i.fa.fa-plane.icons-2
@@ -426,17 +120,17 @@ block content
                                                 li
                                                     p Flight - VN Airs
                                                 li
-                                                    p Depart - Ho Chi Minh City
+                                                    p Depart - {{ flightRoundTrip.firstFlightSelect.Origin }}
                                                 li
                                                     p.inline-block Departure
-                                                    p.inline-block.text-align-right 18:35 Thu, 20 Oct
+                                                    p.inline-block.text-align-right {{ flightRoundTrip.firstFlightSelect.DepartureTimes }} {{ flightRoundTrip.firstFlightSelect.DepartureDates }}
                                                 li
-                                                    p Price - 3.000.000
+                                                    p Price - {{ flightRoundTrip.firstFlightSelect.Price }} VND
                                                 li
-                                                    p Arrive - California, New York
+                                                    p Arrive - {{ flightRoundTrip.firstFlightSelect.Destination }}
                                                 li
                                                     p.inline-block Arrival
-                                                    p.inline-block.text-align-right 19:25 Thu, 20 Oct
+                                                    p.inline-block.text-align-right {{ flightRoundTrip.firstFlightSelect.DepartureTimes }} {{ flightRoundTrip.firstFlightSelect.DepartureDates }}
                                         .single-widget-item
                                             .title-item
                                                 i.fa.fa-plane.icons-2
@@ -447,17 +141,17 @@ block content
                                                 li
                                                     p Flight - VN Airs
                                                 li
-                                                    p Depart - California, New York
+                                                    p Depart - {{ flightRoundTrip.secondFlightSelect.Destination }}
                                                 li
                                                     p.inline-block Departure
-                                                    p.inline-block.text-align-right 18:35 Thu, 20 Oct
+                                                    p.inline-block.text-align-right {{ flightRoundTrip.secondFlightSelect.DepartureTimes }} {{ flightRoundTrip.secondFlightSelect.DepartureDates }}
                                                 li
-                                                    p Price - 3.000.000
+                                                    p Price - {{ flightRoundTrip.secondFlightSelect.Price }} VND
                                                 li
-                                                    p Arrive - Ho Chi Minh City
+                                                    p Arrive - {{ flightRoundTrip.secondFlightSelect.Origin }}
                                                 li
                                                     p.inline-block Arrival
-                                                    p.inline-block.text-align-right 19:25 Thu, 20 Oct
+                                                    p.inline-block.text-align-right {{ flightRoundTrip.secondFlightSelect.DepartureTimes }} {{ flightRoundTrip.secondFlightSelect.DepartureDates }}
                                         .single-widget-item
                                             .title-item
                                                 i.fa.fa-user.icons-2
@@ -467,10 +161,10 @@ block content
                                                     p Price Summary:
                                                 li
                                                     p.inline-block Fare
-                                                    p.inline-block.text-align-right 1.900.000 VND
+                                                    p.inline-block.text-align-right Free
                                                 li
                                                     p.inline-block Taxes
-                                                    p.inline-block.text-align-right 320.000 VND
+                                                    p.inline-block.text-align-right Free
                                                 li
                                                     p Discount
                                                 li
@@ -478,4 +172,4 @@ block content
                                                 li
                                                     p Ancillaries
                                         .single-widget-item
-                                            h2.total-price.style-1 2.200.000 VND
+                                            h2.total-price.style-1 {{ flightRoundTrip.firstFlightSelect.Price + flightRoundTrip.secondFlightSelect.Price }} VND

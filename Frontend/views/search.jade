@@ -48,10 +48,10 @@ block content
                                         form.content-widget
                                             .ffw-radio-selection
                                                 span.ffw-radio-btn-wrapper.margin-right-40
-                                                    input#flight-type-1.ffw-radio-btn(type='radio', name='flight type', value='one way', checked='checked')
+                                                    input#flight-type-1.ffw-radio-btn(type='radio', ng-model='search.flightType', value='1')
                                                     label.ffw-radio-label(for='flight-type-1') One Way
                                                 span.ffw-radio-btn-wrapper
-                                                    input#flight-type-2.ffw-radio-btn(type='radio', name='flight type', value='round trip')
+                                                    input#flight-type-2.ffw-radio-btn(type='radio', ng-model='search.flightType', value='2')
                                                     label.ffw-radio-label(for='flight-type-2') Round Trip
                                                 .stretch  
                                             .text-input.small-margin-top

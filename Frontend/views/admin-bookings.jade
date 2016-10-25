@@ -5,7 +5,7 @@ block content
         .container
             .row
                 h4.title Quản lý đặt chỗ
-                table.table-manage-bookings
+                table.table-manage-bookings(ng-controller="AdminBookingController as adminBookingCtrl")
                     tbody
                         tr.style-1
                             td(width="10%") Mã
@@ -14,20 +14,11 @@ block content
                             td(width="15%") Trạng thái
                             td(width="20%") Sửa
                             td(width="20%") Xóa
-                        tr
-                            td(width="10%") ABCXYZ
-                            td(width="20%") 2016-05-01 10:00:00
-                            td(width="15%") 400000
-                            td(width="15%") 1
-                            td(width="20%")
-                                .btn.btn-update Sửa
-                            td(width="20%")
-                                .btn.btn-delete Xóa
-                        tr
-                            td(width="10%") ABCXYZ
-                            td(width="20%") 2016-05-01 10:00:00
-                            td(width="15%") 400000
-                            td(width="15%") 1
+                        tr(ng-repeat="item in adminBookingCtrl.bookings")
+                            td(width="10%") {{aitem.BookingCode}}
+                            td(width="20%") {{item.BookingTimes}}
+                            td(width="15%") {{item.Payment}}
+                            td(width="15%") {{item.Status}}
                             td(width="20%")
                                 .btn.btn-update Sửa
                             td(width="20%")
@@ -44,12 +35,10 @@ block content
                             td(width="15%")
                                 .text-box-wrapper
                                     .input-group
-                                        input.tb-input.width-175px(type="text")
+                                        input.tb-inputa.width-175px(type="text")
                             td(width="15%")
                                 .text-box-wrapper
                                     .input-group
                                         input.tb-input.width-175px(type="text")
                             td(width="40%" colspan="2")
                                 .btn.btn-insert Thêm
-
-

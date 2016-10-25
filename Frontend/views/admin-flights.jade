@@ -5,7 +5,7 @@ block content
         .container
             .row
                 h4.title Quản lý chuyến bay
-                table.table-manage-flights
+                table.table-manage-flights(ng-controller="AdminFlightController as adminFlightCtrl")
                     tbody
                         tr.style-1
                             td(width="5%") Mã
@@ -19,72 +19,57 @@ block content
                             td(width="10%") Giá bán
                             td(width="10%") Sửa
                             td(width="10%") Xóa
-                        tr
-                            td(width="5%") BL326
-                            td(width="5%") SGN
-                            td(width="5%") TBB
-                            td(width="10%") 2016-10-05
-                            td(width="10%") 08:45
-                            td(width="5%") Y
-                            td(width="5%") E
-                            td(width="10%") 100
-                            td(width="10%") 100.000
+                        tr(ng-repeat="item in adminFlightCtrl.flights")
+                            td(width="5%") {{item.FlightCode}}
+                            td(width="5%") {{item.Origin}}
+                            td(width="5%") {{item.Destination}}
+                            td(width="10%") {{item.DepartureDates}}
+                            td(width="10%") {{item.DepartureTimes}}
+                            td(width="5%") {{item.ClassLevel}}
+                            td(width="5%") {{item.PriceLevel}}
+                            td(width="10%") {{item.SeatNumber}}
+                            td(width="10%") {{item.Price}}
                             td(width="10%")
                                 .btn.btn-update Sửa
                             td(width="10%")
-                                .btn.btn-delete Xóa
-                        tr
-                            td(width="5%") BL326
-                            td(width="5%") SGN
-                            td(width="5%") TBB
-                            td(width="10%") 2016-10-05
-                            td(width="10%") 08:45
-                            td(width="5%") Y
-                            td(width="5%") E
-                            td(width="10%") 100
-                            td(width="10%") 100.000
-                            td(width="10%")
-                                .btn.btn-update Sửa
-                            td(width="10%")
-                                .btn.btn-delete Xóa
+                                .btn.btn-delete(ng-click="DeleteCurrentFlight(item.flightCode)") Xóa
+
                         tr
                             td(width="5%")
                                 .text-box-wrapper
                                     .input-group
-                                        input.tb-input.width-50px(type="text")
+                                        input.tb-input.width-50px(type="text", ng-model="newFlightCode")
                             td(width="5%")
                                 .text-box-wrapper
                                     .input-group
-                                        input.tb-input.width-50px(type="text")
+                                        input.tb-input.width-50px(type="text", ng-model="newOrigin")
                             td(width="5%")
                                 .text-box-wrapper
                                     .input-group
-                                        input.tb-input.width-50px(type="text")
+                                        input.tb-input.width-50px(type="text", ng-model="newDestination")
                             td(width="10%")
                                 .text-box-wrapper
                                     .input-group
-                                        input.tb-input.width-100px(type="text")
+                                        input.tb-input.width-100px(type="text", ng-model="departureDates")
                             td(width="10%")
                                 .text-box-wrapper
                                     .input-group
-                                        input.tb-input.width-100px(type="text")
+                                        input.tb-input.width-100px(type="text", ng-model="departureTimes")
                             td(width="5%")
                                 .text-box-wrapper
                                     .input-group
-                                        input.tb-input.width-50px(type="text")
+                                        input.tb-input.width-50px(type="text", ng-model="classLevel")
                             td(width="5%")
                                 .text-box-wrapper
                                     .input-group
-                                        input.tb-input.width-50px(type="text")
+                                        input.tb-input.width-50px(type="text", ng-model="priceLevel")
                             td(width="10%")
                                 .text-box-wrapper
                                     .input-group
-                                        input.tb-input.width-100px(type="text")
+                                        input.tb-input.width-100px(type="text", ng-model="seatNumber")
                             td(width="10%")
                                 .text-box-wrapper
                                     .input-group
-                                        input.tb-input.width-100px(type="text")
+                                        input.tb-input.width-100px(type="text", ng-model="price")
                             td(width="20%" colspan="2")
-                                .btn.btn-insert Thêm
-
-
+                                .btn.btn-insert(ng-click="adminFlightCtrl.InsertNewFlight()") Thêm

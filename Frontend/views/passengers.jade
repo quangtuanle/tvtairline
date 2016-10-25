@@ -1,28 +1,24 @@
 extends layout
 
 block content
-    section.page-main.padding-top.padding-bottom
+    section.page-main.padding-top.padding-bottom(ng-controller="PassengersController as passengers")
         .container
             .row
-                .col-md-8.main-left
-                    .find-widget.widget.style-1
+                .col-md-12.main-left
+                    .find-widget.widget.style-1.passenger
                         .block-name
                             .text-input
-                                .text-box-wrapper.width-20
-                                    label.tb-label Title<p style="color: red; display: inline-block;">*</p>
-                                    .select-wrapper
-                                        select.form-control.custom-select.selectbox
-                                            option Mr.
-                                            option Mrs.
-                                            option Ms.
-                                .text-box-wrapper.width-40
-                                    label.tb-label Middle name & First/Given name<p style="color: red; display: inline-block;">*</p>
-                                    .input-group
-                                        input.tb-input(type='text', placeholder='Write your name...')
-                                .text-box-wrapper.width-40
-                                    label.tb-label Last/Family name
-                                    .input-group
-                                        input.tb-input(type='text', placeholder='Write your name...')
+                                .row
+                                    .col-md-6
+                                        .text-box-wrapper
+                                            label.tb-label Middle name & First/Given name<p style="color: red; display: inline-block;">*</p>
+                                            .input-group
+                                                input.tb-input(type='text', placeholder='Write your name...', ng-model="passengers.firstname")
+                                    .col-md-6
+                                        .text-box-wrapper
+                                            label.tb-label Last/Family name
+                                            .input-group
+                                                input.tb-input(type='text', placeholder='Write your name...', ng-model="passengers.lastname")
                         .block-travel-info
                             .text-input
                                 h4.title Traveler Info
@@ -30,15 +26,15 @@ block content
                                     .text-box-wrapper
                                         label.tb-label Date of Birth:
                                         .input-group
-                                            input.tb-input.datetimepickerWidget(type='text', placeholder='dd/mm/YYYY')
+                                            input.tb-input.datetimepickerWidget.date-of-birth(type='text', placeholder='dd/mm/YYYY')
                                     .text-box-wrapper
                                         label.tb-label Gender:
                                         .ffw-radio-selection
                                             span.ffw-radio-btn-wrapper.margin-right-40
-                                                input#gender-type-1.ffw-radio-btn(type='radio', name='gender type', value='male')
+                                                input#gender-type-1.ffw-radio-btn(type='radio', ng-model='passengers.genderType', value='Mr')
                                                 label.ffw-radio-label(for='gender-type-1') Male
                                             span.ffw-radio-btn-wrapper
-                                                input#gender-type-2.ffw-radio-btn(type='radio', name='gender type', value='female')
+                                                input#gender-type-2.ffw-radio-btn(type='radio', ng-model='passengers.genderType', value='Mrs')
                                                 label.ffw-radio-label(for='gender-type-2') Female
                         .block-number
                             .text-input
@@ -170,8 +166,8 @@ block content
                                         label.tb-label.width-20 Retype:
                                         .input-group.width-80
                                             input.tb-input(type="email")
-                    a.btn.btn-continue.style-1 Tiếp tục
-                .col-md-4.sidebar-widget
+                    a.btn.btn-continue.style-1(ng-click="passengers.onContinueClick()") Tiếp tục
+                .col-md-4.sidebar-widget.hide
                     .col-2
                         .search-widget.widget
                             form
