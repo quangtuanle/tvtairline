@@ -11,3 +11,16 @@ D:\HOC_TAP\Nam4_HKI\LapTrinhHienDai\THUC_HANH\AirplaneReservationWebService\Airp
 D:\HOC_TAP\Nam4_HKI\LapTrinhHienDai\THUC_HANH\AirplaneReservationWebService\AirplaneReservationWebService\obj\Debug\AirplaneReservationWebService.csprojResolveAssemblyReference.cache
 D:\HOC_TAP\Nam4_HKI\LapTrinhHienDai\THUC_HANH\AirplaneReservationWebService\AirplaneReservationWebService\obj\Debug\AirplaneReservationWebService.dll
 D:\HOC_TAP\Nam4_HKI\LapTrinhHienDai\THUC_HANH\AirplaneReservationWebService\AirplaneReservationWebService\obj\Debug\AirplaneReservationWebService.pdb
+C:\Users\VAN\Documents\GitHub\tvtairline\Backend\AirplaneReservationWebService\AirplaneReservationWebService\bin\AirplaneReservationWebService.dll
+C:\Users\VAN\Documents\GitHub\tvtairline\Backend\AirplaneReservationWebService\AirplaneReservationWebService\bin\AirplaneReservationWebService.pdb
+C:\Users\VAN\Documents\GitHub\tvtairline\Backend\AirplaneReservationWebService\AirplaneReservationWebService\bin\Newtonsoft.Json.dll
+C:\Users\VAN\Documents\GitHub\tvtairline\Backend\AirplaneReservationWebService\AirplaneReservationWebService\bin\System.Net.Http.Formatting.dll
+C:\Users\VAN\Documents\GitHub\tvtairline\Backend\AirplaneReservationWebService\AirplaneReservationWebService\bin\System.Web.Http.dll
+C:\Users\VAN\Documents\GitHub\tvtairline\Backend\AirplaneReservationWebService\AirplaneReservationWebService\bin\System.Web.Http.WebHost.dll
+C:\Users\VAN\Documents\GitHub\tvtairline\Backend\AirplaneReservationWebService\AirplaneReservationWebService\bin\Newtonsoft.Json.xml
+C:\Users\VAN\Documents\GitHub\tvtairline\Backend\AirplaneReservationWebService\AirplaneReservationWebService\bin\System.Net.Http.Formatting.xml
+C:\Users\VAN\Documents\GitHub\tvtairline\Backend\AirplaneReservationWebService\AirplaneReservationWebService\bin\System.Web.Http.xml
+C:\Users\VAN\Documents\GitHub\tvtairline\Backend\AirplaneReservationWebService\AirplaneReservationWebService\bin\System.Web.Http.WebHost.xml
+C:\Users\VAN\Documents\GitHub\tvtairline\Backend\AirplaneReservationWebService\AirplaneReservationWebService\obj\Debug\AirplaneReservationWebService.csprojResolveAssemblyReference.cache
+C:\Users\VAN\Documents\GitHub\tvtairline\Backend\AirplaneReservationWebService\AirplaneReservationWebService\obj\Debug\AirplaneReservationWebService.dll
+C:\Users\VAN\Documents\GitHub\tvtairline\Backend\AirplaneReservationWebService\AirplaneReservationWebService\obj\Debug\AirplaneReservationWebService.pdb
