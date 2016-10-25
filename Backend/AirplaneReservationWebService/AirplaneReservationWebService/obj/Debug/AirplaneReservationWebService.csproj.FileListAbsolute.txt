@@ -1,0 +1,13 @@
+D:\HOC_TAP\Nam4_HKI\LapTrinhHienDai\THUC_HANH\AirplaneReservationWebService\AirplaneReservationWebService\bin\AirplaneReservationWebService.dll
+D:\HOC_TAP\Nam4_HKI\LapTrinhHienDai\THUC_HANH\AirplaneReservationWebService\AirplaneReservationWebService\bin\AirplaneReservationWebService.pdb
+D:\HOC_TAP\Nam4_HKI\LapTrinhHienDai\THUC_HANH\AirplaneReservationWebService\AirplaneReservationWebService\bin\Newtonsoft.Json.dll
+D:\HOC_TAP\Nam4_HKI\LapTrinhHienDai\THUC_HANH\AirplaneReservationWebService\AirplaneReservationWebService\bin\System.Net.Http.Formatting.dll
+D:\HOC_TAP\Nam4_HKI\LapTrinhHienDai\THUC_HANH\AirplaneReservationWebService\AirplaneReservationWebService\bin\System.Web.Http.dll
+D:\HOC_TAP\Nam4_HKI\LapTrinhHienDai\THUC_HANH\AirplaneReservationWebService\AirplaneReservationWebService\bin\System.Web.Http.WebHost.dll
+D:\HOC_TAP\Nam4_HKI\LapTrinhHienDai\THUC_HANH\AirplaneReservationWebService\AirplaneReservationWebService\bin\Newtonsoft.Json.xml
+D:\HOC_TAP\Nam4_HKI\LapTrinhHienDai\THUC_HANH\AirplaneReservationWebService\AirplaneReservationWebService\bin\System.Net.Http.Formatting.xml
+D:\HOC_TAP\Nam4_HKI\LapTrinhHienDai\THUC_HANH\AirplaneReservationWebService\AirplaneReservationWebService\bin\System.Web.Http.xml
+D:\HOC_TAP\Nam4_HKI\LapTrinhHienDai\THUC_HANH\AirplaneReservationWebService\AirplaneReservationWebService\bin\System.Web.Http.WebHost.xml
+D:\HOC_TAP\Nam4_HKI\LapTrinhHienDai\THUC_HANH\AirplaneReservationWebService\AirplaneReservationWebService\obj\Debug\AirplaneReservationWebService.csprojResolveAssemblyReference.cache
+D:\HOC_TAP\Nam4_HKI\LapTrinhHienDai\THUC_HANH\AirplaneReservationWebService\AirplaneReservationWebService\obj\Debug\AirplaneReservationWebService.dll
+D:\HOC_TAP\Nam4_HKI\LapTrinhHienDai\THUC_HANH\AirplaneReservationWebService\AirplaneReservationWebService\obj\Debug\AirplaneReservationWebService.pdb
