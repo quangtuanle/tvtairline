@@ -70,6 +70,14 @@ namespace AirplaneReservationWebService.Controllers
             }
             return result;
         }
+
+        [HttpDelete]
+        public bool DeleteFight(string flightcode)
+        {
+            DALFlight DAL_Flight = new DALFlight();
+            return DAL_Flight.DeleteFight(flightcode);
+        }
+           
            
     }
 }

@@ -86,5 +86,23 @@ namespace AirplaneReservationWebService.DAL
                 return -1;
             }
         }
+
+        public bool DeleteFight(string flightcode)
+        {
+            try
+            {
+                _connect.Open();
+                string sql = "delete from flight where flightCode = '" + flightcode + "'";
+
+                SqlCommand cmd = new SqlCommand(sql, _connect);
+                cmd.ExecuteNonQuery();
+                _connect.Close();
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
     }
 }
